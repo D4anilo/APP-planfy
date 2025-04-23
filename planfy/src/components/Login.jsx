@@ -6,7 +6,7 @@ export default function Login() {
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.login}>
-                    <Text style={styles.titulo}>FAÇA SEU LOGIN</Text>
+                    <Text style={styles.titulo}>Faça seu Login</Text>
 
                     <TextInput style={styles.input} placeholder="Email" />
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
@@ -22,7 +22,7 @@ export default function Login() {
                         />
                     </View>
 
-                    <Text style={styles.textCriar}>Caso ainda nj tenha uma conta. Criar uma?</Text>
+                    <Text style={styles.textCriar}>Caso ainda não tenha uma conta. Crie uma</Text>
                 </View>
             </View>
 
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     },
     titulo: {
         fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 20,
+        padding: 10
     },
     input: {
         width: '95%',

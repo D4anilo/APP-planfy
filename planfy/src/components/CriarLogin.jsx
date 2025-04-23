@@ -6,25 +6,19 @@ export default function Login() {
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.login}>
-                    <Text style={styles.titulo}>FAÇA SEU LOGIN</Text>
+                    <Text style={styles.titulo}>Informe seus dados</Text>
 
                     <TextInput style={styles.input} placeholder="Nome" />
                     <TextInput style={styles.input} placeholder="Email" />
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
                     <TextInput style={styles.input} placeholder="Aniversário"/>
 
-                    <TouchableOpacity style={styles.botaoLogar} onPress={() => console.log("Login pressionado")}>
-                        <Text style={styles.textBotao}>Criar Conta</Text>
-                    </TouchableOpacity>
-
-                    <View style={styles.containerGoogle}>
-                        <Image
-                            style={styles.loginGoogle}
-                            source={require("../../assets/google.png")}
-                        />
+                    <View style={styles.botao}>
+                        <TouchableOpacity style={styles.botaoLogar} onPress={() => console.log("Login pressionado")}>
+                            <Text style={styles.textBotao}>Criar Conta</Text>
+                        </TouchableOpacity>
                     </View>
 
-                    <Text style={styles.textCriar}>Caso ainda nj tenha uma conta. Criar uma?</Text>
                 </View>
             </View>
 
@@ -50,7 +44,8 @@ const styles = StyleSheet.create({
     },
     titulo: {
         fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 20,
+        padding: 10
     },
     input: {
         width: '95%',
@@ -62,6 +57,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         color: '#7A7A7A',
         fontWeight: 'bold'
+    },
+    botao: {
+        padding: 10
     },
     botaoLogar: {
         width: 120,
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
         color: '#fff',      
         fontSize: 18,             
         fontWeight: 'bold',       
-        textAlign: 'center',      
+        textAlign: 'center'   
     },
     containerGoogle: {
         marginVertical: 20,

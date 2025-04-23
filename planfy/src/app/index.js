@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image'
-import Header from './src/components/Header';
-import Semana from './src/components/Semana';
-import Adicionar from './src/components/Adicionar';
+import Header from '../components/Header';
+import Semana from '../components/Semana';
+import Adicionar from '../components/Adicionar';
 import { ScrollView } from 'react-native-web';
 
 export default function App() {
@@ -12,12 +12,14 @@ export default function App() {
       <View style={styles.container}>
         <Header />
         <Semana />
+        
         <View style={styles.foto}>
           <Image
             style={styles.borda}
-            source={require("./assets/bordas3.png")}
+            source={require("../assets/bordas3.png")}
           />
         </View>
+
         <View style={styles.footer}>
           <Adicionar />
         </View>
