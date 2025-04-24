@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Image } from 'expo-image'
+import { Link, useRouter } from 'expo-router'
+import { useState } from 'react'
 import Header from '../components/Header';
 import Adicionar from '../components/Adicionar';
 import TaskCreator from '../components/CrieTask';
 import 'react-native-gesture-handler';
-import { ScrollView } from 'react-native-web';
 
-export default function App() {
+export default function TaskScreen() {
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -16,7 +18,7 @@ export default function App() {
         <View style={styles.bordaContainer}>
           <Image
             style={styles.borda2}
-            source={require("../assets/bordas2.png")} />
+            source={require("../../assets/bordas2.png")} />
         </View>
 
         <View style={styles.task}>

@@ -15,7 +15,7 @@ export default function App() {
         <View style={styles.bordaContainer}>
           <Image
             style={styles.borda2}
-            source={require("../assets/bordas2.png")} />
+            source={require("../../assets/bordas2.png")} />
         </View>
 
         <View style={styles.login}>
@@ -25,7 +25,7 @@ export default function App() {
         <View style={styles.bordaContainer2}>
           <Image
             style={styles.borda4}
-            source={require("../assets/bordas4.png")} />
+            source={require("../../assets/bordas4.png")} />
         </View>
 
         <View style={styles.adc}>

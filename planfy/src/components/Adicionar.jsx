@@ -1,35 +1,44 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Image } from 'expo-image'
+import { Link, useRouter } from 'expo-router';
 
 export default function Adicionar() {
+
+    const router = useRouter()
+    
     return (
         <View style={styles.container}>
             <View style={styles.botoes}>
-                <a href="#">
+                <Link href="/home">
                     <Image
                         style={styles.botao}
                         source={require("../../assets/home.png")}
-                />
-                </a>
+                    />
+                </Link>
             </View>
 
             <View style={styles.botoes}>
-                <a href="#">
+                <Link href="/criar_task.js">
                     <Image
                         style={styles.botao}
                         source={require("../../assets/botaoAdd.png")}
-                />
-                </a>
+                    />
+                </Link>
             </View>
 
             <View style={styles.botoes}>
-                <a href="#">
+                <Link href="#">
                     <Image
                         style={styles.botao}
                         source={require("../../assets/calender.png")}
-                />
-                </a>
+                    />
+                </Link>
             </View>
+
+            <View>
+
+            </View>
+            
         </View>
     )
 }
@@ -47,7 +56,7 @@ const styles = StyleSheet.create ({
     },
 
     botao: {
-        width: 35,
-        height: 35
+        width: 50,
+        height: 50
     }, 
 });
