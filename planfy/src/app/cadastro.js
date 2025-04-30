@@ -2,12 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image'
 import Header from '../components/Header';
-import Adicionar from '../components/Adicionar';
 import CriarLogin from '../components/CriarLogin';
-import Login from '../components/Login';
 import { ScrollView } from 'react-native-web';
 
-export default function App() {
+export default function Cadastro() {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -29,11 +27,6 @@ export default function App() {
             source={require("../../assets/bordas4.png")} />
         </View>
 
-        <View style={styles.adc}>
-          <Adicionar />
-        </View>
-
-
         <StatusBar style="auto" />
       </View>
     </ScrollView>
@@ -43,7 +36,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F3F3F3',
   },
   login: {
     justifyContent: 'center',

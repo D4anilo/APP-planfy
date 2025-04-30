@@ -1,29 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image'
 import Header from '../components/Header';
-import Semana from '../components/Semana';
-import Adicionar from '../components/Adicionar';
-import { useState, useEffect } from 'react';
-import { Link, useRouter } from 'expo-router';
+import Login from '../components/Login';
+import { ScrollView } from 'react-native-web';
 
-export default function HomeScreen() {
-
+export default function Logar() {
   return (
     <ScrollView>
       <View style={styles.container}>
         <Header />
-        <Semana />
-        
-        <View style={styles.foto}>
+
+        <View style={styles.bordaContainer}>
           <Image
-            style={styles.borda}
-            source={require("../../assets/bordas3.png")}
-          />
+            style={styles.borda2}
+            source={require("../../assets/bordas2.png")} /> 
         </View>
 
-        <View style={styles.footer}>
-          <Adicionar />
+        <View style={styles.login}>
+          <Login />
+        </View>
+
+        <View style={styles.bordaContainer2}>
+          <Image
+            style={styles.borda4}
+            source={require("../../assets/bordas4.png")} />
         </View>
 
         <StatusBar style="auto" />
@@ -35,24 +36,37 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F3F3F3',
   },
-  footer: {
-    width: "100%",
+  login: {
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'fixed',
-    paddingTop: 820,
+  },
+  bordaContainer: {
+    marginTop: -60,
+    paddingBottom: 86,
+    zIndex: '-1'
+  },
+  borda2: {
+    width: 180,
+    height: 180
+  },
+  bordaContainer2: {
+    paddingTop: 60,
+    alignItems: 'flex-end',
+    zIndex: -1
+  },
+  borda4: {
+    width: 180,
+    height: 130
   },
   borda: {
-    marginLeft: '-20px',
     width: 130,
     height: 130
   },
-  foto: {
-    marginTop: 580
+  adc: {
+    paddingTop:810,
+    position: 'fixed'
   },
-  button: {
-    margin: 15
-  }
+
 });

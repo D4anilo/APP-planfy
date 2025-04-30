@@ -48,7 +48,7 @@ const Semana = () => {
 
 const styles = StyleSheet.create({
     card: {
-        padding: 0, // Tamanho fixo do padding
+        padding: 2, // Tamanho fixo do padding
         backgroundColor: "white",
         borderRadius: 16,
         shadowColor: "#000",
@@ -61,13 +61,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "center",
+        gap: 2,
     },
     dayContainer: {
         padding: 5, // Padding fixo para os cards
         backgroundColor: "#f0f0f0",
         borderRadius: 6,
         margin: 5, // Margem entre os cards
-        width: 35, // Largura fixa para cada card
+        width: 39, // Largura fixa para cada card
         height: 45,
         alignItems: "center",
         justifyContent: 'center',

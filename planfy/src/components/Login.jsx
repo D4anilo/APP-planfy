@@ -1,28 +1,33 @@
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { Image } from 'expo-image';
+import { Link } from 'expo-router';
+import { Pressable } from 'react-native';
 
 export default function Login() {
     return (
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.login}>
-                    <Text style={styles.titulo}>Faça seu Login</Text>
+                    <Text style={styles.titulo}>FAZER LOGIN</Text>
 
                     <TextInput style={styles.input} placeholder="Email" />
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
 
-                    <TouchableOpacity style={styles.botaoLogar} onPress={() => console.log("Login pressionado")}>
-                        <Text style={styles.textBotao}>Logar</Text>
-                    </TouchableOpacity>
+                    <Pressable style={styles.botaoLogar}>
+                        <Link style={styles.textBotao} href={'/(tabs)'}>Logar</Link>
+                    </Pressable>
 
                     <View style={styles.containerGoogle}>
+                        <Link href={'/(tabs)'}>
                         <Image
                             style={styles.loginGoogle}
                             source={require("../../assets/google.png")}
                         />
+                        </Link>
                     </View>
 
-                    <Text style={styles.textCriar}>Caso ainda não tenha uma conta. Crie uma</Text>
+                    <Text style={styles.textCriar}>Caso ainda não tenha uma conta.
+                        <Link style={styles.criarConta} href={'/cadastro'}>Criar conta</Link></Text>
                 </View>
             </View>
 
@@ -43,13 +48,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 20,
         padding: 10,
-        boxShadow: '3px 2px 3px #999999',
-
+        boxShadow: '5px 5px 5px #999999',
     },
     titulo: {
         fontWeight: 'bold',
-        fontSize: 20,
-        padding: 10
+        fontSize: 21,
+        padding: 11
     },
     input: {
         width: '95%',
@@ -64,13 +68,13 @@ const styles = StyleSheet.create({
     },
     // Estilos para o botão customizado
     botaoLogar: {
-        width: 80,
+        width: 100,
         backgroundColor: '#6381A8',
-        borderRadius: 25,
+        borderRadius: 35,
         padding: 7,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 5,
+        marginTop: 5,
     },
     textBotao: {
         color: '#fff',             // Cor do texto
@@ -79,18 +83,22 @@ const styles = StyleSheet.create({
         textAlign: 'center',      // Centraliza o texto
     },
     containerGoogle: {
-        marginVertical: 20,
+        marginVertical: 5,
     },
     loginGoogle: {
-        width: 180,
+        width: 200,
         height: 35,
         borderRadius: 35
     },
     textCriar: {
-        marginTop: 0,
+        marginTop: 4,
         fontWeight: 'bold',
-        fontSize: 13,
+        fontSize: 14,
         padding: 5,
         textAlign: 'center'
+    },
+    criarConta: {
+        fontSize: 15,
+        textDecorationLine: 'underline',
     }
 });

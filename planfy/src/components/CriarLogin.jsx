@@ -1,22 +1,23 @@
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
-import { Image } from 'expo-image';
+import { StyleSheet, View, Text, TextInput, ScrollView } from "react-native";
+import { Pressable } from 'react-native';
+import { Link } from 'expo-router';
 
 export default function Login() {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <View style={styles.login}>
-                    <Text style={styles.titulo}>Informe seus dados</Text>
+                <View style={styles.criar}>
+                    <Text style={styles.titulo}>CRIE UMA CONTA</Text>
 
                     <TextInput style={styles.input} placeholder="Nome" />
                     <TextInput style={styles.input} placeholder="Email" />
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
-                    <TextInput style={styles.input} placeholder="Aniversário"/>
+                    <TextInput style={styles.input} placeholder="Nascimento"/>
 
                     <View style={styles.botao}>
-                        <TouchableOpacity style={styles.botaoLogar} onPress={() => console.log("Login pressionado")}>
-                            <Text style={styles.textBotao}>Criar Conta</Text>
-                        </TouchableOpacity>
+                        <Pressable style={styles.botaoLogar}>                  
+                            <Link style={styles.textBotao} href={'/(tabs)'}>Criar Conta</Link>
+                        </Pressable> 
                     </View>
 
                 </View>
@@ -33,19 +34,19 @@ const styles = StyleSheet.create({
         padding: 30,
         width: '100%',
         borderRadius: 20,
+        backgroundColor: '#F3F3F3'
     },
-    login:{
+    criar:{
         backgroundColor: '#E9DBDF',
         alignItems: 'center',
         borderRadius: 20,
-        padding: 10,
-        boxShadow: '3px 2px 3px #999999',
-
+        padding: 20,
+        boxShadow: '5px 5px 5px #999999',
     },
     titulo: {
         fontWeight: 'bold',
-        fontSize: 20,
-        padding: 10
+        fontSize: 21,
+        padding: 11
     },
     input: {
         width: '95%',
@@ -62,27 +63,19 @@ const styles = StyleSheet.create({
         padding: 10
     },
     botaoLogar: {
-        width: 120,
+        width: 140,
         backgroundColor: '#6381A8',
-        borderRadius: 25,
+        borderRadius: 35,
         padding: 7,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 5,
     },
     textBotao: {
         color: '#fff',      
         fontSize: 18,             
         fontWeight: 'bold',       
-        textAlign: 'center'   
-    },
-    containerGoogle: {
-        marginVertical: 20,
-    },
-    loginGoogle: {
-        width: 180,
-        height: 35,
-        borderRadius: 35
+        textAlign: 'center',
+        padding: 3,
     },
     textCriar: {
         marginTop: 0,

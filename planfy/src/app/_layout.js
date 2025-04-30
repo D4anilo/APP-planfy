@@ -1,20 +1,13 @@
 import { Stack } from 'expo-router';
 
-export default function RootLayout() {
+export default function Layout() {
     return (
-      <Stack
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#FFF',
-          },
-          headerTintColor: '#000',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}>
-        <Stack.Screen name="index" options={{title: "Home"}} />
-        <Stack.Screen name="criar_task.js" options={{title: "Criar Tarefas"}} />
-        <Stack.Screen name="(tabs)" options={{title: "Tabs", headerShown: false}} />
+      <Stack>
+        <Stack.Screen name="index" options={{title: "Logar", headerShown: false}} />
+        <Stack.Screen name="cadastro" options={{title: "Criar Conta", headerShown: false}} />
+        <Stack.Screen name="(tabs)/index" options={{headerShown: false}} />
+        <Stack.Screen name="criarTarefas" options={{title: "Criar Tarefas", headerShown: false}} />
+        <Stack.Screen name="user" options={{title: "User", headerShown: false}} />
       </Stack>
     );
   }
