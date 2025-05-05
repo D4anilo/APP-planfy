@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Image } from 'expo-image'
 import Header from '../components/Header';
-import Adicionar from '../components/Footer';
+// import Adicionar from '../components/Footer';
 
 export default function UserScreen() {
 

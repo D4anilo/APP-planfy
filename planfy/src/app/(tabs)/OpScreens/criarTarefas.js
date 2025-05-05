@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Image } from 'expo-image'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import TaskCreator from '../components/CrieTask';
+import Header from '../../../components/Header';
+// import Footer from '../../components/Footer';
+import TaskCreator from '../../../components/CrieTask';
 import 'react-native-gesture-handler';
 
 export default function TarefasScreen() {
@@ -16,15 +16,11 @@ export default function TarefasScreen() {
         <View style={styles.bordaContainer}>
           <Image
             style={styles.borda2}
-            source={require("../../assets/bordas2.png")} />
+            source={require("../../../../assets/bordas2.png")} />
         </View>
 
         <View style={styles.task}>
           <TaskCreator/>
-        </View>
-
-        <View style={styles.adc}>
-          <Footer />
         </View>
 
 

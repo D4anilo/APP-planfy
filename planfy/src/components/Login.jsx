@@ -14,20 +14,21 @@ export default function Login() {
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
 
                     <Pressable style={styles.botaoLogar}>
-                        <Link style={styles.textBotao} href={'/(tabs)'}>Logar</Link>
+                        <Link style={styles.textBotao} href={'/OpScreens'}>Logar</Link>
                     </Pressable>
 
                     <View style={styles.containerGoogle}>
-                        <Link href={'/(tabs)'}>
-                        <Image
-                            style={styles.loginGoogle}
-                            source={require("../../assets/google.png")}
-                        />
+                        <Link href={'/OpScreens'}>
+                            <Image
+                                style={styles.loginGoogle}
+                                source={require("../../assets/google.png")}
+                            />
                         </Link>
                     </View>
 
-                    <Text style={styles.textCriar}>Caso ainda não tenha uma conta.
-                        <Link style={styles.criarConta} href={'/cadastro'}>Criar conta</Link></Text>
+                    <Text style={styles.textCriar}>Caso ainda não tenha uma conta
+                        <Link style={styles.criarConta} href={'/cadastro'}> Crie uma conta</Link>
+                    </Text>
                 </View>
             </View>
 
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         width: '100%',
         borderRadius: 20,
     },
-    login:{
+    login: {
         backgroundColor: '#E9DBDF',
         alignItems: 'center',
         borderRadius: 20,
@@ -99,6 +100,6 @@ const styles = StyleSheet.create({
     },
     criarConta: {
         fontSize: 15,
-        textDecorationLine: 'underline',
+        color: '#6381A8',
     }
 });

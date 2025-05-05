@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Image } from 'expo-image'
-import Header from '../../components/Header';
-import Semana from '../../components/Semana';
-import Adicionar from '../../components/Footer';
+import Header from '../../../components/Header';
+import Semana from '../../../components/Semana';
+// import Adicionar from '../../components/Footer';
 
 export default function HomeScreen() {
 
@@ -16,13 +16,11 @@ export default function HomeScreen() {
         <View style={styles.foto}>
           <Image
             style={styles.borda}
-            source={require("../../../assets/bordas3.png")}
+            source={require("../../../../assets/bordas3.png")}
           />
         </View>
 
-        <View style={styles.footer}>
-          <Adicionar />
-        </View>
+
 
         <StatusBar style="auto" />
       </View>

@@ -12,14 +12,14 @@ export default function Login() {
                     <TextInput style={styles.input} placeholder="Nome" />
                     <TextInput style={styles.input} placeholder="Email" />
                     <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
-                    <TextInput style={styles.input} placeholder="Nascimento"/>
+                    <TextInput style={styles.input} placeholder="Nascimento" />
 
                     <View style={styles.botao}>
-                        <Pressable style={styles.botaoLogar}>                  
-                            <Link style={styles.textBotao} href={'/(tabs)'}>Criar Conta</Link>
-                        </Pressable> 
+                        <Pressable style={styles.botaoLogar}>
+                            <Link style={styles.textBotao} href={'/OpScreens'}>Criar Conta</Link>
+                        </Pressable>
                     </View>
-
+                    <Text style={styles.text_link}>Caso já tenha uma conta volte para <Link style={styles.destaque_text} href={'/'}>Login</Link></Text>
                 </View>
             </View>
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#F3F3F3'
     },
-    criar:{
+    criar: {
         backgroundColor: '#E9DBDF',
         alignItems: 'center',
         borderRadius: 20,
@@ -71,9 +71,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textBotao: {
-        color: '#fff',      
-        fontSize: 18,             
-        fontWeight: 'bold',       
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
         textAlign: 'center',
         padding: 3,
     },
@@ -83,5 +83,21 @@ const styles = StyleSheet.create({
         fontSize: 13,
         padding: 5,
         textAlign: 'center'
-    }
+    },
+
+    destaque_text: {
+        color: '#6381A8',
+        fontWeight: 'bold',
+        fontSize: 13,
+        padding: 5,
+        textAlign: 'center'
+    },
+
+    text_link: {
+        marginTop: 4,
+        fontWeight: 'bold',
+        fontSize: 14,
+        padding: 5,
+        textAlign: 'center'
+    },
 });

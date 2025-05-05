@@ -49,7 +49,6 @@ const Semana = () => {
 const styles = StyleSheet.create({
     card: {
         padding: 2, // Tamanho fixo do padding
-        backgroundColor: "white",
         borderRadius: 16,
         shadowColor: "#000",
         elevation: 4,
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     },
     dayContainer: {
         padding: 5, // Padding fixo para os cards
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "#ffffff", // Cor de fundo dos cards
         borderRadius: 6,
         margin: 5, // Margem entre os cards
         width: 39, // Largura fixa para cada card
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
         boxShadow: '1px 1px 1px'
     },
     today: {
-        backgroundColor: "#d1d1d1", // Cor para destacar o dia atual
+        backgroundColor: "#6381A8", // Cor para destacar o dia atual
     },
     dayText: {
         fontSize: 12, // Tamanho fixo da fonte para o nome do dia
