@@ -26,6 +26,18 @@ export default function Layout() {
                     );
                 }
             }} />
+
+            <Tabs.Screen name="user" options={{
+                title: "", headerShown: false, 
+                tabBarIcon: ({ focused, color, size }) => {
+                    return (
+                        <View style={[styles.iconContainer, focused && styles.iconFocused]}>
+                            <FontAwesome name="user" size={25} color={focused ? "#ffffff" : color} />
+                        </View>
+                    );
+                }
+            }} />
+
         </Tabs>
     )
 }
@@ -42,4 +54,8 @@ const styles = StyleSheet.create({
     iconFocused: {
         backgroundColor: "#6381A8", // Background color when focused
     },
+
+    Tabs:{
+        backgroundColor: "#ffffff",
+    }
 });

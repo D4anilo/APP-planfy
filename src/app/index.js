@@ -2,23 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image'
 import Header from '../components/Header';
-import CriarLogin from '../components/CriarLogin';
+import Login from '../components/Login';
 import { ScrollView } from 'react-native-web';
 
-export default function Cadastro() {
+export default function Logar() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Header />
 
         <View style={styles.bordaContainer}>
           <Image
             style={styles.borda2}
-            source={require("../../assets/bordas2.png")} />
+            source={require("../../assets/bordas2.png")} /> 
         </View>
 
         <View style={styles.login}>
-          <CriarLogin/>
+          <Login />
         </View>
 
         <View style={styles.bordaContainer2}>
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
   },
   bordaContainer: {
     marginTop: -60,
-    paddingBottom: 0,
+    paddingBottom: 86,
     zIndex: '-1'
   },
   borda2: {
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     height: 180
   },
   bordaContainer2: {
-    paddingTop: 25,
+    paddingTop: 60,
     alignItems: 'flex-end',
     zIndex: -1
   },

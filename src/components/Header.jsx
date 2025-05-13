@@ -13,7 +13,7 @@ export default function Header() {
             </View>
 
             <View >
-                <Link href="/user">
+                <Link href="./user">
                     <Image
                         style={styles.perfil}
                         source={require("../../assets/User.png")}
