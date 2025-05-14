@@ -1,0 +1,29 @@
+import { StyleSheet, Text, View } from "react-native";
+import Header from "../../../components/Header";
+import User from "../../../components/User";
+import InfoPerfil from "../../../components/InfoPerfil";
+
+
+export default function PerfilScreen() {
+    return (
+        <View style={styles.container}>
+            <Header />
+            <User />
+            <View style={styles.perfil}>
+                <InfoPerfil nome="Danilo" senha="*******" email="danilomorais@gmail.com"/>
+            </View>
+
+
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#ffffff',
+    },
+    perfil: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+})

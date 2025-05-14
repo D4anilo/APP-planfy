@@ -27,7 +27,7 @@ export default function Layout() {
                 }
             }} />
 
-            <Tabs.Screen name="user" options={{
+            <Tabs.Screen name="perfil" options={{
                 title: "", headerShown: false, 
                 tabBarIcon: ({ focused, color, size }) => {
                     return (
