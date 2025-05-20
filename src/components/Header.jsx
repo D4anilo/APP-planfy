@@ -13,12 +13,10 @@ export default function Header() {
             </View>
 
             <View >
-                <Link href="./user">
                     <Image
                         style={styles.perfil}
                         source={require("../../assets/User.png")}
                     />
-                </Link>
             </View>
         </View>
     )
@@ -35,11 +33,11 @@ const styles = StyleSheet.create ({
         backgroundColor: 'white'
     },
     logo: {
-        width: 50,
-        height: 50
+        width: 60,
+        height: 60
     },
     perfil: {
-        width: 27,
-        height: 27
+        width:  38,
+        height: 38
     }
 })
