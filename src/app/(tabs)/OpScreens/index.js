@@ -14,10 +14,10 @@ export default function HomeScreen() {
         <Semana />
         
         <View style={styles.foto}>
-          <Image
+          {/* <Image
             style={styles.borda}
             source={require("../../../../assets/bordas3.png")}
-          />
+          /> */}
         </View>
 
 

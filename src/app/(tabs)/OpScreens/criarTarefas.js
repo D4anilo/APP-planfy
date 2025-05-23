@@ -5,6 +5,7 @@ import Header from '../../../components/Header';
 // import Footer from '../../components/Footer';
 import TaskCreator from '../../../components/CrieTask';
 import 'react-native-gesture-handler';
+import EditTask from '../../../components/EditTask';
 
 export default function TarefasScreen() {
 
@@ -23,6 +24,12 @@ export default function TarefasScreen() {
           <TaskCreator/>
         </View>
 
+  
+
+
+      
+
+   
 
         <StatusBar style="auto" />
       </View>
@@ -33,7 +40,7 @@ export default function TarefasScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f2f2f2',
   },
   bordaContainer: {
     marginTop: -60,

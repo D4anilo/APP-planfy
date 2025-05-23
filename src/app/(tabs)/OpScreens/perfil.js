@@ -20,7 +20,7 @@ export default function PerfilScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f2f2f2',
     },
     perfil: {
         justifyContent: 'center',

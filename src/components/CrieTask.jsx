@@ -33,7 +33,7 @@ const TaskCreator = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CRIE UMA NOVA TASK</Text>
+      <Text style={styles.title}>ADICIONE UMA NOVA TAREFA</Text>
 
       <TextInput
         style={styles.input}
@@ -80,12 +80,12 @@ const TaskCreator = () => {
 const styles = StyleSheet.create({
   container: { padding: 20 },
   title: { fontSize: 24, fontWeight: "bold", textAlign: "center", marginBottom: 20 },
-  input: { borderWidth: 1, borderColor: "#6381A8", padding: 10, borderRadius: 8, marginBottom: 20 },
-  daysContainer: { flexDirection: "row", justifyContent: "center", marginBottom: 20 },
-  day: { padding: 10, margin: 5, borderRadius: 20, backgroundColor: "#eee" },
+  input: { borderWidth: 1, borderColor: "#ffffff", backgroundColor: "#ffffff", padding: 15, borderRadius: 50, marginBottom: 20 },
+  daysContainer: { flexDirection: "row", justifyContent: "center", marginBottom: 20, backgroundColor: "#ffffff", padding: 1.5, borderRadius: 50 },
+  day: { padding: 10, margin: 5, borderRadius: 20, backgroundColor: "#ffffff" },
   selectedDay: { backgroundColor: "#6381A8" },
   dayText: { color: "black", fontWeight: "bold" },
-  card: { flexDirection: "row", alignItems: "center", padding: 15, borderWidth: 0, borderRadius: 8 },
+  card: { backgroundColor: "#ffffff", flexDirection: "row", alignItems: "center", padding: 15, borderWidth: 0, borderRadius: 50 },
   cardText: { flex: 1, fontSize: 16 },
   checkbox: { width: 20, height: 20, borderWidth: 2, borderRadius: 5 },
   checkedBox: { backgroundColor: "#6381A8" },
@@ -93,6 +93,10 @@ const styles = StyleSheet.create({
   // Estilos do botão "Adicionar tarefa"
   addButton: { backgroundColor: "#6381A8", padding: 15, borderRadius: 8, marginTop: 20, alignItems: "center" },
   addButtonText: { color: "white", fontSize: 16, fontWeight: "bold" },
+
+  bold: {
+    fontWeight: 'bold', // Indicações em negrito
+  },
 });
 
 export default TaskCreator;

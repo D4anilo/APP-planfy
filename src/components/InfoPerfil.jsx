@@ -5,6 +5,7 @@ export default function InfoPerfil({ nome, senha, email }) {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedField, setSelectedField] = useState("");
     const [fieldValue, setFieldValue] = useState("");
+    const [currentPassword, setCurrentPassword] = useState("");
 
     const handleEdit = (field, value) => {
         setSelectedField(field);
@@ -61,18 +62,43 @@ export default function InfoPerfil({ nome, senha, email }) {
             >
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>Editar {selectedField}</Text>
+                        {/* Exibe o estado atual da informação */}
+                
+                        <Text style={[styles.modalValue, styles.bold]}>Alterar {selectedField}</Text>
+
+                        {/* Campo para inserir o novo valor */}
+    
                         <TextInput
-                            style={styles.input}
-                            value={fieldValue}
+                            style={styles.modalInput}
+                            placeholder={
+                                selectedField === "Senha"
+                                    ? "Digite a nova senha"
+                                    : `Digite o novo ${selectedField.toLowerCase()}`
+                            }
                             onChangeText={setFieldValue}
                         />
-                        <View style={styles.buttonContainer}>
-                            <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
-                                <Text style={styles.buttonText}>Salvar</Text>
+
+                        {/* Campo para inserir a senha atual */}
+                        <TextInput
+                            style={styles.modalInput}
+                            placeholder="Digite sua senha atual"
+                            secureTextEntry={true}
+                            onChangeText={setCurrentPassword}
+                        />
+
+                        {/* Botões de ação */}
+                        <View style={styles.modalButtons}>
+                            <TouchableOpacity
+                                style={styles.modalButton}
+                                onPress={handleSave}
+                            >
+                                <Text style={styles.modalButtonText}>Salvar</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.cancelButton} onPress={() => setModalVisible(false)}>
-                                <Text style={styles.buttonText}>Cancelar</Text>
+                            <TouchableOpacity
+                                style={[styles.modalButton, styles.cancelButton]}
+                                onPress={() => setModalVisible(false)}
+                            >
+                                <Text style={styles.modalButtonText}>Cancelar</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -89,6 +115,7 @@ const styles = StyleSheet.create({
         width: '85%',
         borderRadius: 10,
         boxShadow: '1px 2px 6px #999999',
+        backgroundColor: '#ffffff',
         gap: 10,
     },
     info: {
@@ -166,7 +193,42 @@ const styles = StyleSheet.create({
         flex: 1,
         marginLeft: 5,
     },
-    buttonText: {
+    uttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    modalLabel: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    modalValue: {
+        fontSize: 16,
+        marginBottom: 10,
+    },
+    modalInput: {
+        width: '100%',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        borderRadius: 5,
+        marginBottom: 10,
+    },
+    modalButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginTop: 10,
+    },
+    modalButton: {
+        backgroundColor: '#6381A8',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+        flex: 1,
+        marginRight: 5,
+    },
+    modalButtonText: {
         color: 'white',
         fontWeight: 'bold',
     },
