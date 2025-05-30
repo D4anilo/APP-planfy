@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { router } from 'expo-router';
 import { Modal, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 
 export default function InfoPerfil({ nome, senha, email }) {
@@ -6,6 +7,7 @@ export default function InfoPerfil({ nome, senha, email }) {
     const [selectedField, setSelectedField] = useState("");
     const [fieldValue, setFieldValue] = useState("");
     const [currentPassword, setCurrentPassword] = useState("");
+    const [logoutConfirmVisible, setLogoutConfirmVisible] = useState(false);
 
     const handleEdit = (field, value) => {
         setSelectedField(field);
@@ -49,9 +51,11 @@ export default function InfoPerfil({ nome, senha, email }) {
                 </View>
             </View>
 
-            <View style={styles.exit}>
+            <TouchableOpacity style={styles.exit} onPress={() => setLogoutConfirmVisible(true)}>
                 <Text style={[styles.textExit, styles.bold]}>Sair da Conta</Text>
-            </View>
+            </TouchableOpacity>
+
+
 
             {/* Modal para edição */}
             <Modal
@@ -104,6 +108,45 @@ export default function InfoPerfil({ nome, senha, email }) {
                     </View>
                 </View>
             </Modal>
+
+
+            {/* Modal de confirmação de Logouyt */}
+            <Modal
+                transparent={true}
+                visible={logoutConfirmVisible}
+                animationType="fade"
+                onRequestClose={() => setLogoutConfirmVisible(false)}
+            >
+
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalContent}>
+                        <Text style={styles.modalTitle}>Deseja mesmo sair da conta?</Text>
+
+                        <View style={styles.modalButtons}>
+
+                            <TouchableOpacity
+                                style={styles.modalButton}
+                                onPress={() => {
+                                    setLogoutConfirmVisible(false);
+                                    router.replace('/'); //Redireciona para a tela de Login (primeiro index.js)
+                                }}
+                            >
+                                <Text style={styles.modalButtonText}>Sim</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                style={[styles.modalButton, styles.cancelButton]}
+                                onPress={() => setLogoutConfirmVisible(false)}
+                                >
+                                <Text style={styles.modalButtonText}>Cancelar</Text>
+                            </TouchableOpacity>
+
+                        </View>
+
+                    </View>
+                </View>
+            </Modal>
+
         </View>
     );
 }
