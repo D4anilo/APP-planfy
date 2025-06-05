@@ -10,7 +10,7 @@ export default function Layout() {
                 tabBarIcon: ({ focused, color, size }) => {
                     return (
                         <View style={[styles.iconContainer, focused && styles.iconFocused]}>
-                            <FontAwesome name="home" size={25} color={focused ? "#ffffff" : color} />
+                            <FontAwesome name="home" size={28} color={focused ? "#ffffff" : color} />
                         </View>
                     );
                 }
@@ -21,7 +21,7 @@ export default function Layout() {
                 tabBarIcon: ({ focused, color, size }) => {
                     return (
                         <View style={[styles.iconContainer, focused && styles.iconFocused]}>
-                            <FontAwesome name="plus" size={25} color={focused ? "#ffffff" : color} />
+                            <FontAwesome name="plus" size={28} color={focused ? "#ffffff" : color} />
                         </View>
                     );
                 }
@@ -32,7 +32,7 @@ export default function Layout() {
                 tabBarIcon: ({ focused, color, size }) => {
                     return (
                         <View style={[styles.iconContainer, focused && styles.iconFocused]}>
-                            <FontAwesome name="user" size={25} color={focused ? "#ffffff" : color} />
+                            <FontAwesome name="user" size={28} color={focused ? "#ffffff" : color} />
                         </View>
                     );
                 }
@@ -44,9 +44,9 @@ export default function Layout() {
 
 const styles = StyleSheet.create({
     iconContainer: {
-        width: 40,
-        height: 40,
-        borderRadius: 20, // 100% border radius
+        width: 45,
+        height: 45,
+        borderRadius: 25, // 100% border radius
         backgroundColor: "#cccccc", // Default background color
         justifyContent: "center",
         alignItems: "center",

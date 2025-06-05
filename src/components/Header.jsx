@@ -1,6 +1,5 @@
 import { StyleSheet, View, Text } from "react-native"
 import { Image } from "expo-image"
-import { Link } from 'expo-router';
 
 export default function Header() {
     return (

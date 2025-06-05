@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image'
-import Header from '../components/Header';
 import CriarLogin from '../components/CriarLogin';
 import { ScrollView } from 'react-native-web';
 

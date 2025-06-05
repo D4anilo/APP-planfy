@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+//import { LinearGradient } from 'expo-linear-gradient';
 
 const Semana = () => {
-    const days = [
-        "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom" // Abreviação dos dias da semana
-    ];
+    const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
     const today = new Date();
-    let todayIndex = today.getDay() - 1; // Obtém o índice do dia atual (0 = Domingo, 1 = Segunda...)
-    if (todayIndex === -1) todayIndex = 6; // Ajusta para que Domingo seja o último índice
+    let todayIndex = today.getDay(); // 0 = Domingo, 6 = Sábado
 
     const dayNumbers = Array.from({ length: 7 }, (_, i) => {
         const newDate = new Date();
@@ -16,76 +14,91 @@ const Semana = () => {
         return newDate.getDate();
     });
 
-    // Função para obter o mês de forma formatada (ex: 03 para março)
-    const getFormattedMonth = (date) => {
-        const month = date.getMonth() + 1; // getMonth() retorna de 0 (Janeiro) até 11 (Dezembro)
-        return month < 10 ? `0${month}` : month; // Garante que o mês tenha dois dígitos
-    };
-
-    const formattedDates = dayNumbers.map((day, index) => {
-        const date = new Date();
-        date.setDate(today.getDate() - todayIndex + index);
-        const month = getFormattedMonth(date);
-        return { day, month };
-    });
-
     return (
-        <View style={styles.card}>
+        <View style={[styles.container, styles.shadowBox]}>
+            
+            <Text style={styles.title}>Hoje</Text>
             <View style={styles.row}>
-                {days.map((day, index) => (
-                    <View
-                        key={index}
-                        style={[styles.dayContainer, index === todayIndex && styles.today]}
-                    >
-                        <Text style={styles.dayText}>{day}</Text>
-                        <Text style={styles.dayNumber}>{formattedDates[index].day}/{formattedDates[index].month}</Text>
-                    </View>
-                ))}
+                {days.map((day, index) => {
+                    const isToday = index === todayIndex;
+                    return (
+                        <View key={index} style={styles.dayWrapper}>
+                            <Text style={[styles.dayLabel, isToday && styles.dayLabelToday]}>
+                                {day}
+                            </Text>
+                            <View style={[styles.dayCircle, isToday && styles.dayCircleToday]}>
+                                <Text style={[styles.dayNumber, isToday && styles.dayNumberToday]}>
+                                    {dayNumbers[index]}
+                                </Text>
+                            </View>
+                        </View>
+                    );
+                })}
             </View>
         </View>
+        
     );
 };
 
+
 const styles = StyleSheet.create({
-    card: {
-        padding: 2, // Tamanho fixo do padding
-        borderRadius: 16,
+    container: {
+        backgroundColor: "#CBD5E1",
+        paddingVertical: 16,
+        paddingHorizontal: 12,
+    },
+    shadowBox: {
         shadowColor: "#000",
-        elevation: 4,
-        alignItems: "center",
-        marginTop: 0, // Distância pequena do topo da tela
-        width: '100%' // Largura fixa do card
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 5, // Para Android
+    },
+    title: {
+        fontSize: 25,
+        fontWeight: "600",
+        marginBottom: 15,
+        color: "#000",
     },
     row: {
         flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: 2,
-    },
-    dayContainer: {
-        padding: 5, // Padding fixo para os cards
-        backgroundColor: "#ffffff", // Cor de fundo dos cards
-        borderRadius: 6,
-        margin: 5, // Margem entre os cards
-        width: 39, // Largura fixa para cada card
-        height: 45,
+        justifyContent: "space-between",
         alignItems: "center",
-        justifyContent: 'center',
-        boxShadow: '1px 1px 1px'
     },
-    today: {
-        backgroundColor: "#6381A8", // Cor para destacar o dia atual
+    dayWrapper: {
+        alignItems: "center",
+        width: 40,
     },
-    dayText: {
-        fontSize: 12, // Tamanho fixo da fonte para o nome do dia
+    dayLabel: {
+        fontSize: 15,
+        color: "#9E9E9E",
+        marginBottom: 10,
+    },
+    dayLabelToday: {
+        color: "#000000",
         fontWeight: "bold",
-        textAlign: "center",
+    },
+    dayCircle: {
+        width: 38,
+        height: 38,
+        borderRadius: 19,
+        backgroundColor: "#B1C1D2",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    dayCircleToday: {
+        backgroundColor: "#718EAD",
+        borderWidth: 2,
+        borderColor: "#718EAD",
     },
     dayNumber: {
-        fontSize: 12, // Tamanho fixo do número do dia
-        color: "black",
+        fontSize: 15,
+        color: "#3D3D3D", //cinza para o numero do dia
+    },
+    dayNumberToday: {
+        color: "#FFFFFF",
+        fontWeight: "bold",
     },
 });
 
 export default Semana;
-
