@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     foto: {
-        width:  125,
-        height: 125,
+        width:  130,
+        height: 130,
         borderRadius: 100,
         boxShadow: '1px 1px 6px black',
     },

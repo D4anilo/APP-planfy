@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import Semana from '../../../components/Semana';
 import TarefasDoDia from "../../../components/TarefasDoDia";
 

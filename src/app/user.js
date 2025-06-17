@@ -1,14 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Image } from 'expo-image'
-import Header from '../components/Header';
 
 export default function UserScreen() {
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Header />
         
         <View style={styles.foto}>
           <Image
