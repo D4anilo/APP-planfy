@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { StyleSheet, View, Text, TextInput, ScrollView } from "react-native";
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import { Pressable } from 'react-native';

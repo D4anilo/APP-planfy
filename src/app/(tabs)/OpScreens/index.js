@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Semana from '../../../components/Semana';
+import TarefasDoDia from "../../../components/TarefasDoDia";
 
 export default function HomeScreen() {
 
@@ -9,6 +10,8 @@ export default function HomeScreen() {
       <View style={styles.container}>
 
         <Semana />
+
+        <TarefasDoDia/>
 
         <StatusBar style="auto" />
       </View>
