@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import useAppStore from "../app/UseAppStore";
+import useAppStore from "../app/useAppStore";
 
 const Semana = () => {
   const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];

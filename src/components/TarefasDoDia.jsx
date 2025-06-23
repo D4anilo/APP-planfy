@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet, ActivityIndicator } from "react-native";
-import useAppStore from "../app/UseAppStore";
+import useAppStore from "../app/useAppStore";
 
 // Simulação de tarefas por dia
 const tarefasMock = {
